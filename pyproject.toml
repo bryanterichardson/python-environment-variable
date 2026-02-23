@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=60", "setuptools-scm>=8.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "environment-variable"
+version = "0.1.0"
+description = "Open-source package for loading environment variables easier and in a Pythonic way"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.pytest.ini_options]
+testpaths = [
+    "tests",
+]
+
+[tool.ruff]
+line-length = 120
+respect-gitignore = true
+src = [
+    "src",
+    "tests",
+]
+
+[tool.ruff.format]
+indent-style = "space"
+quote-style = "double"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = [
+    "src",
+]
+include = [
+    "*",
+]
+
+[tool.setuptools_scm]
+
+[dependency-groups]
+dev = [
+    "ipython",
+    "pre-commit",
+    "pytest>7",
+    "ruff==0.15.2",
+    "setuptools_scm>=8.0",
+]
