@@ -1,11 +1,13 @@
 [build-system]
-requires = ["setuptools>=60", "setuptools-scm>=8.0"]
+requires = ["setuptools>=80", "setuptools-scm[simple]>=9"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "environment-variable"
-version = "0.1.0"
 description = "Open-source package for loading environment variables easier and in a Pythonic way"
+dynamic = [
+    "version",
+]
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = []
@@ -26,19 +28,6 @@ src = [
 [tool.ruff.format]
 indent-style = "space"
 quote-style = "double"
-
-[tool.setuptools]
-include-package-data = true
-
-[tool.setuptools.packages.find]
-where = [
-    "src",
-]
-include = [
-    "*",
-]
-
-[tool.setuptools_scm]
 
 [dependency-groups]
 dev = [
