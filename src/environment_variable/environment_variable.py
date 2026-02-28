@@ -43,7 +43,7 @@ class EnvironmentVariable:
         self,
         name: str,
         type_: Callable[[str], T],
-        default_value: T | None,
+        default_value: T | None = None,
         *,
         obfuscated: bool = False,
     ):
